@@ -20,5 +20,7 @@ Genome annotations overlapping the *Xist* loci were manually identified and remo
 ## Cell Ranger mkref
 The custom genome reference was then created following 10x Genomics custom reference creation guidelines.
 
-## Feature file
-To facilitate mapping of feature names from this analysis for others using Ensembl annotations, this directory also contains `VTA_F1_features.tsv.gz`. This is the cellranger count `features.tsv.gz` out file from analysis of the F1 GEM well of the VTA dataset. This file contains the Ensembl gene IDs, and gene names for all features detected.
+## Feature mapping files
+To facilitate mapping of feature names from this analysis for others using Ensembl annotations, this directory also contains `VTA_F1_noXist_features.tsv.gz`. This is the cellranger count `features.tsv.gz` out file from analysis of the F1 GEM well of the VTA dataset when alligned to the original Rn7 genome without Xist. This file contains the Ensembl gene IDs, and gene names for all features detected.
+
+The `mapping_table.csv` file contains similar information to `VTA_F1_features.tsv.gz` but includes a column for unique symbols for each gene, which were created by running the `make.uique()` function in R on the gene symbol column. This should mimic Seurat's default behavior of making feature names unique when reading in 10X data.
